@@ -1,4 +1,5 @@
 import csv
+import signal
 from multiprocessing import Pool
 
 
@@ -12,8 +13,13 @@ def read_csv_as_dicts(path):
 
     return items
 
+
+def init_worker():
+    signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+
 def map_iterate_in_parallel(iterable, function, processes=8):
-    pool = Pool(processes=processes)
+    pool = Pool(processes, init_worker)
     output = pool.map(function, iterable)
     return list(output)
 

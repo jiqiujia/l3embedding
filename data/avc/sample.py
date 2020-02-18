@@ -301,8 +301,8 @@ def read_video(video_path):
     height = int(vinfo['@height'])
 
     scaling = 256.0 / min(width, height)
-    new_width = math.ceil(scaling * width)
-    new_height = math.ceil(scaling * height)
+    new_width = int(math.ceil(scaling * width))
+    new_height = int(math.ceil(scaling * height))
 
     # Resize frames
     reader = FFmpegReader(video_path,
