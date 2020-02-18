@@ -230,7 +230,7 @@ def train(train_data_dir, validation_data_dir, output_dir,
 
     # Form model ID
     data_subset_name = os.path.basename(train_data_dir)
-    data_subset_name = data_subset_name[:data_subset_name.rindex('_')]
+    #data_subset_name = data_subset_name[:data_subset_name.rindex('_')]
     model_id = os.path.join(data_subset_name, model_type)
 
     param_dict = {

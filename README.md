@@ -12,10 +12,12 @@ This repository contains an implementation of the model proposed in Look, Listen
 
 Dependencies
 * Python 3 (we use 3.6.3)
+* apt-get install libjpeg-dev zlib1g-dev libsndfile1
 * [ffmpeg](http://www.ffmpeg.org)
 * [sox](http://sox.sourceforge.net)
 * [TensorFlow](https://www.tensorflow.org/install/) (follow instructions carefully, and install before other Python dependencies)
 * [keras](https://keras.io/#installation) (follow instructions carefully!)
+* [for py35] pip install numba==0.41.0
 * Other Python dependencies can by installed via `pip install -r requirements.txt`
 
 The code for the model and training implementation can be found in `l3embedding/`. Note that the metadata format expected is the same used in [AudioSet](https://research.google.com/audioset/download.html) ([Gemmeke, J., Ellis, D., et al. 2017](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45857.pdf)), as training this model on AudioSet was one of the goals for this implementation.
